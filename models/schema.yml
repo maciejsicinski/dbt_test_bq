@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+
+  - name: stg_orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: apply_kind
+        tests:
+          - accepted_values:
+              values: ['I', 'U']
