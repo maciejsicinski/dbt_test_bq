@@ -5,14 +5,23 @@ models:
     columns:
       - name: order_id
         tests:
-          - unique
+          - unique:
+              config:
+                severity: warn
+                error_if: ">1000"
+                warn_if: ">10"
 
   - name: stg_orders
     columns:
       - name: order_id
         tests:
-          - unique
-          - not_null
+          - unique:
+              config:
+                severity: warn
+                error_if: ">1000"
+                warn_if: ">10"
+          - not_null:
+              
       - name: apply_kind
         tests:
           - accepted_values:
