@@ -1,0 +1,1 @@
+select * from `DEV_STG.D_ORDERS_HIST`
